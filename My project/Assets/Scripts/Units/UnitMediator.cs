@@ -19,10 +19,9 @@ namespace Assets.Scripts.Units
         }
 
 
-        public List<BaseUnit> SpawnStartingEnemies()
+        public void SpawnStartingEnemies()
         {
             unitHandler.SpawnStartingUnits(_startingUnits);
-            return unitHandler.GetAllUnits();
         }
 
         public void PositionUnits(Dictionary<BaseUnit,TileDetails> unitsAndTiles)
@@ -30,14 +29,5 @@ namespace Assets.Scripts.Units
             unitHandler.PositionUnits(unitsAndTiles);
         }
 
-        public BaseUnit GetRandomUnitThatWasInstanciated()
-        {
-            return unitHandler.GetRandomUnit();
-        }
-
-        public int GetAmountOfUnitsInstanciated()
-        {
-            return unitHandler.AmountInstanciated();
-        }
     }
 }

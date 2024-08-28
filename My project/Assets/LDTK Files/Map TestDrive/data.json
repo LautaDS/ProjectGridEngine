@@ -1,0 +1,118 @@
+{
+	"identifier": "MapaDemo",
+	"uniqueIdentifer": "af769610-4ce0-11ef-aa02-5d575bac4a83",
+	"x": 0,
+	"y": 0,
+	"width": 256,
+	"height": 256,
+	"bgColor": "#696A79",
+	"neighbourLevels": [],
+	"customFields" : {},
+	"layers": [],
+	"entities": {
+		"Unidad": [
+			{
+				"id": "Unidad",
+				"iid": "d1144780-4ce0-11ef-aa02-75da32da8822",
+				"layer": "Unidades",
+				"x": 96,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 4982091,
+				"customFields": {
+					"Faction": "Jugador",
+					"Nombre": "John Salchichon",
+					"Movement": 3,
+					"HP": 10,
+					"Ataque": 4
+				}
+			},
+			{
+				"id": "Unidad",
+				"iid": "d2de8030-4ce0-11ef-aa02-2916e3e27ba4",
+				"layer": "Unidades",
+				"x": 192,
+				"y": 128,
+				"width": 32,
+				"height": 32,
+				"color": 4982091,
+				"customFields": {
+					"Faction": "Jugador",
+					"Nombre": "John Salchichon",
+					"Movement": 3,
+					"HP": 10,
+					"Ataque": 4
+				}
+			},
+			{
+				"id": "Unidad",
+				"iid": "d4d67fa0-4ce0-11ef-aa02-853236e26660",
+				"layer": "Unidades",
+				"x": 32,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16711680,
+				"customFields": {
+					"Faction": "IA",
+					"Nombre": "John Salchichon",
+					"Movement": 3,
+					"HP": 10,
+					"Ataque": 4
+				}
+			},
+			{
+				"id": "Unidad",
+				"iid": "d668b860-4ce0-11ef-aa02-c903d0ab7bed",
+				"layer": "Unidades",
+				"x": 0,
+				"y": 32,
+				"width": 32,
+				"height": 32,
+				"color": 16705377,
+				"customFields": {
+					"Faction": "Neutral",
+					"Nombre": "John Salchichon",
+					"Movement": 3,
+					"HP": 10,
+					"Ataque": 4
+				}
+			},
+			{
+				"id": "Unidad",
+				"iid": "d8146c90-4ce0-11ef-aa02-41627285593c",
+				"layer": "Unidades",
+				"x": 32,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 16711680,
+				"customFields": {
+					"Faction": "IA",
+					"Nombre": "John Salchichon",
+					"Movement": 3,
+					"HP": 10,
+					"Ataque": 4
+				}
+			},
+			{
+				"id": "Unidad",
+				"iid": "d9d97520-4ce0-11ef-aa02-597494c67cc5",
+				"layer": "Unidades",
+				"x": 0,
+				"y": 64,
+				"width": 32,
+				"height": 32,
+				"color": 16711680,
+				"customFields": {
+					"Faction": "IA",
+					"Nombre": "John Salchichon",
+					"Movement": 3,
+					"HP": 10,
+					"Ataque": 4
+				}
+			}
+		]
+	}
+}

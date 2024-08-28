@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 namespace Assets.Scripts.Units
 {
@@ -25,8 +26,8 @@ namespace Assets.Scripts.Units
 
         void Awake()
         {
-            Offset.x = 1f;
-            Offset.y = 1f;
+            Offset.x = 0.5f;
+            Offset.y = 0.5f;
             _playerUnits = new List<PlayerUnit>();
             _enemyUnits = new List<EnemyUnit>();
         }
@@ -43,9 +44,8 @@ namespace Assets.Scripts.Units
             {
                 if (unit != null)
                 {
-                    GameObject unitObject = Instantiate(_baseunitPrefab);
+                    GameObject unitObject = Instantiate(_baseunitPrefab, this.transform);
 
-                    //var tileToPositionUnit = gridInfo.First(t => t.position == unit.StartingPos);
                     //unitObject.transform.position = tileToPositionUnit.position + Offset;
 
                     if (unit.Faction == Faction.Enemy)
@@ -71,28 +71,14 @@ namespace Assets.Scripts.Units
             return _playerUnits.Concat<BaseUnit>(_enemyUnits).ToList();
         }
 
-        public BaseUnit GetRandomUnit()
-        {
-            var allUnits = _playerUnits.Concat<BaseUnit>(_enemyUnits).ToList();
-            if (allUnits.Count == 0)
-            {
-                return null;
-            }
-            var random = new System.Random();
-            int randomIndex = random.Next(allUnits.Count);
-            return allUnits[randomIndex];
-        }
-
-        public int AmountInstanciated()
-        {
-            return _playerUnits.Count + _enemyUnits.Count;
-        }
-
         public void PositionUnit(BaseUnit unit, TileDetails tileToPositionTo)
         {
             var specificUnit = FindUnit(unit);
             if (specificUnit != null)
-                specificUnit.transform.position = tileToPositionTo.position;
+            {
+                specificUnit.transform.position = new Vector3(tileToPositionTo.position.x, tileToPositionTo.position.y, this.transform.position.z);
+                specificUnit.transform.rotation = Quaternion.identity;
+            }
         }
 
         private BaseUnit FindUnit(BaseUnit unit)

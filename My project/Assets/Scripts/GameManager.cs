@@ -27,14 +27,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cursorMediator.UpdateCursorPosition(mapManager.GetTilemap());
-        if (Input.GetMouseButtonDown(0))
-        {
-            var amount = unitManager.GetAmountOfUnitsInstanciated();
-            print(amount.ToString());
-            var unitsz = unitManager.GetRandomUnitThatWasInstanciated();
-            print("A random unit of the ones instanciated are in the position " + unitsz.currentPos);
-        }
+
     }
 
     public void UpdateGameState(GameState newState)
@@ -65,15 +58,14 @@ public class GameManager : MonoBehaviour
 
     private void InstanciateUnits()
     {
-        var units = unitManager.SpawnStartingEnemies();
-        var unitsAndTheirTiles = mapManager.GetTilesForUnits(units);
-        unitManager.PositionUnits(unitsAndTheirTiles);
+        unitManager.SpawnStartingEnemies();
         UpdateGameState(GameState.PlayerTurn);
     }
 
     private void InstanciateGrid()
     {
         mapManager.InstanciateGrid();
+        UpdateGameState(GameState.SpawnUnits);
     }
 }
 

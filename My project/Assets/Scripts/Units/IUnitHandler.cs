@@ -9,8 +9,5 @@ namespace Assets.Scripts.Units
     {
         void SpawnStartingUnits(List<ScriptableUnit> _startingUnits);
         void PositionUnits(Dictionary<BaseUnit, TileDetails> unitsAndTiles);
-        List<BaseUnit> GetAllUnits();
-        BaseUnit GetRandomUnit();
-        int AmountInstanciated();
     }
 }
