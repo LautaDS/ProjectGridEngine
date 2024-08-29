@@ -23,8 +23,10 @@ namespace Assets.Scripts.GridManager
             type = data.type;
             movementCost = data.movementCost;
             isWalkable = data.isWalkable;
-            var sr = GetComponent<SpriteRenderer>();
-            sr.sprite = data.sprite;
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sortingLayerName = "Grid";
+            spriteRenderer.sprite = data.sprite;
+            spriteRenderer.sortingOrder = 1;
         }
     }
 }

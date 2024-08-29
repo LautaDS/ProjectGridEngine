@@ -17,4 +17,4 @@ MonoBehaviour:
   startingHP: 66
   movement: 6
   startingMana: 6
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: da629595d152e3641a4a7d2663cd4a9e, type: 3}

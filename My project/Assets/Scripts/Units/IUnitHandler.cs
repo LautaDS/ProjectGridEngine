@@ -7,7 +7,7 @@ namespace Assets.Scripts.Units
 {
     public interface IUnitHandler
     {
-        void SpawnStartingUnits(List<ScriptableUnit> _startingUnits);
+        void SpawnStartingUnits();
         void PositionUnits(Dictionary<BaseUnit, TileDetails> unitsAndTiles);
     }
 }

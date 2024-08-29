@@ -18,25 +18,30 @@ public class BaseUnit : MonoBehaviour
     private int startingMana;
     public int currentMana;
 
-    public Sprite sprite;
     public SpriteRenderer spriteRenderer;
 
     public void Initialize(ScriptableUnit scriptableUnit)
     {
+        // Starting variables
         StartingPos = scriptableUnit.StartingPos;
         this.startingHP = scriptableUnit.startingHP;
         this.movement = scriptableUnit.movement;
         this.startingMana = scriptableUnit.startingMana;
-        sprite = scriptableUnit.sprite;
 
+        // Dynamic variables
         currentPos = StartingPos;
         currentHP = startingHP;
         currentMana = startingMana;
 
+        // Setup for Unity components and such
+        this.transform.position = new Vector3(StartingPos.x, StartingPos.y, 0);
+        this.transform.rotation = Quaternion.identity;
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = scriptableUnit.sprite;
         spriteRenderer.sortingLayerName = "Grid";
 
-        spriteRenderer.sortingOrder = 1;
+        spriteRenderer.sortingOrder = 2;
     }
 
     void Awake()

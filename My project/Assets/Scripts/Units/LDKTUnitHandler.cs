@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.GridManager;
+using Assets.Scripts.GridManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,18 +7,19 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
+using Newtonsoft.Json;
 
 namespace Assets.Scripts.Units
 {
-    public class BaseUnitHandler : MonoBehaviour, IUnitHandler
-    {
+public class LDKTUnitHandler : MonoBehaviour
+{
         //Revisar que las clases PlayerUnit y EnemyUnit tengan EL MISMO comportamiento.
         private List<PlayerUnit> _playerUnits;
         private List<EnemyUnit> _enemyUnits;
 
         [SerializeField] private GameObject _baseunitPrefab;
 
-        [SerializeField]List<ScriptableUnit> _startingUnits;
+        [SerializeField]TextAsset jsonUnits;
 
         // Use this for initialization
         void Start()
@@ -40,6 +41,9 @@ namespace Assets.Scripts.Units
 
         public void SpawnStartingUnits()
         {
+            var jsonInfo = JsonConvert.DeserializeObject<LDTKJsonBody>(jsonUnits);
+            
+
             foreach (var unit in _startingUnits)
             {
                 if (unit != null)

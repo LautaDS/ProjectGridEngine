@@ -10,7 +10,6 @@ namespace Assets.Scripts.Units
     {
         [SerializeField] IUnitHandler unitHandler;
         // El scriptObj con la lista de unidades con las que comenzamos
-        [SerializeField]private List<ScriptableUnit> _startingUnits;
         
         public void Awake()
         {
@@ -21,7 +20,7 @@ namespace Assets.Scripts.Units
 
         public void SpawnStartingEnemies()
         {
-            unitHandler.SpawnStartingUnits(_startingUnits);
+            unitHandler.SpawnStartingUnits();
         }
 
         public void PositionUnits(Dictionary<BaseUnit,TileDetails> unitsAndTiles)
